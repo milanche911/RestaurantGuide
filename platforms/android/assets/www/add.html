@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/add.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Add location</title>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="form-horizontal">
+          <fieldset>
+
+              <!-- Form Name -->
+              <legend>Add New Location</legend>
+
+              <!-- Text input-->
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="locationName">Location Name</label>
+                  <div class="col-md-4">
+                      <input id="locationName" name="locationName" type="text" placeholder="Enter location name" class="form-control input-md" required="">
+
+                  </div>
+              </div>
+
+              <!-- Multiple Radios -->
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="locationType">Location Type</label>
+                  <div class="col-md-4">
+                      <div class="radio">
+                          <label for="locationType-0">
+                              <input type="radio" name="locationType" id="locationType-0" value="restaurant" checked="checked"> Restaurant
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label for="locationType-1">
+                              <input type="radio" name="locationType" id="locationType-1" value="cafe"> Cafe
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label for="locationType-2">
+                              <input type="radio" name="locationType" id="locationType-2" value="pub"> Pub
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label for="locationType-3">
+                              <input type="radio" name="locationType" id="locationType-3" value="kafana"> Kafana
+                          </label>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="telephone">Telephone</label>
+                  <div class="col-md-4">
+                      <input id="telephone" name="telephone" type="text" placeholder="Enter phone number" class="form-control input-md">
+
+                  </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="workHours">Work Hours</label>
+                  <div class="col-md-2">
+                      <input id="workHours-from" name="workHours-from" type="text" placeholder="From" class="form-control input-md">
+                  </div>
+                  <div class="col-md-2">
+                      <input id="workHours-until" name="workHours-until" type="text" placeholder="Until" class="form-control input-md">
+                  </div>
+              </div>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <div id="map"></div>
+
+    <div class="container-fluid footer">
+        <div class="row">
+            <div class="col-xs-3 text-center"><a href="index.html"><i class="glyphicon glyphicon-search"></i></br>Explore</a></div>
+            <div class="col-xs-3 text-center"><a href="favorites.html"><i class="glyphicon glyphicon-heart"></i></br>Favorites</a></div>
+            <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-plus"></i></br>Add</a></div>
+            <div class="col-xs-3 text-center"><a href="about.html"><i class="glyphicon glyphicon-question-sign"></i></br>About</a></div>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqEVCTHSPSbFqZwhAWC-F0_z7wG1yewjM"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+    <script src="js/add.js"></script>
+</body>
+
+</html>
