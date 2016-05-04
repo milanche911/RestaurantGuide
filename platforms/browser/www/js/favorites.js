@@ -36,6 +36,10 @@ $(document).ready(function(){
       map = new google.maps.Map
       (document.getElementById("map"), mapOptions);
 
+      //add marker on map on click
+      google.maps.event.addListener(map, 'click', function(event) {
+         placeMarker(event.latLng);
+      });
 
       var latLong = new google.maps.LatLng(latitude, longitude);
 
@@ -81,5 +85,15 @@ $(document).ready(function(){
 
 getMapLocation();
 watchMapPosition();
+
+
+
+function placeMarker(location) {
+    var marker = new google.maps.Marker({
+        position: location,
+        draggable:true,
+        map: map
+    });
+}
 
 });
