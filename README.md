@@ -1,2 +1,0 @@
-# RestaurantGuide
-Student project 
