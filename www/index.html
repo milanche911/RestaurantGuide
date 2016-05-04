@@ -7,12 +7,56 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/search.css">
         <title>Explore</title>
     </head>
     <body>
         <div id="map"></div>
         <div id="currentLocation" class="currentLocation" ><a href="#"><i class="glyphicon glyphicon-map-marker"></i></div>
+
+        <div class="search">
+          <div class="container-fluid">
+          	<div class="row">
+          		<div class="col-md-12">
+                      <div class="input-group" id="adv-search">
+                          <input type="text" class="form-control" placeholder="Pretraga mesta" />
+                          <div class="input-group-btn">
+                              <div class="btn-group" role="group">
+                                  <div class="dropdown dropdown-lg">
+                                      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
+                                      <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                          <form class="form-horizontal" role="form">
+                                            <div class="form-group">
+                                              <label for="filter">Tip Lokala</label>
+                                              <div class="checkbox">
+                                                <label><input type="checkbox" value="">Restoran</label>
+                                              </div>
+                                              <div class="checkbox">
+                                                <label><input type="checkbox" value="">Kafic</label>
+                                              </div>
+                                              <div class="checkbox">
+                                                <label><input type="checkbox" value="">Kafana</label>
+                                              </div>
+                                              <div class="checkbox">
+                                                <label><input type="checkbox" value="">Pab</label>
+                                              </div>
+                                            </div>
+                                          </form>
+                                      </div>
+                                  </div>
+                                  <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        	</div>
+        </div>
+
         <div class="container-fluid footer">
           <div class="row">
             <div class="col-xs-3 text-center"><a href="index.html"><i class="glyphicon glyphicon-search"></i></br>Explore</a></div>
@@ -23,10 +67,8 @@
         </div>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqEVCTHSPSbFqZwhAWC-F0_z7wG1yewjM"></script>
-        <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/map.js"></script>
-        <script type="text/javascript" src="js/nearby.js"></script>
+        <script type="text/javascript" src="js/explore.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-
     </body>
 </html>
