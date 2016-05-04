@@ -1,11 +1,8 @@
 $(document).ready(function(){
-
   // Get geo coordinates
-
   function getMapLocation() {
 
-      navigator.geolocation.getCurrentPosition
-      (onMapSuccess, onMapError, options);
+      navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, options);
   }
 
   // Success callback for get geo coordinates
@@ -29,12 +26,24 @@ $(document).ready(function(){
 
       var mapOptions = {
           center: new google.maps.LatLng(0, 0),
-          zoom: 1,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          zoom: 6,
+          mapTypeControl: true,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.TOP_CENTER
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+              position: google.maps.ControlPosition.RIGHT_CENTER
+          },
+          scaleControl: true,
+          streetViewControl: true,
+          streetViewControlOptions: {
+              position: google.maps.ControlPosition.LEFT_TOP
+          },
+          fullscreenControl: false
       };
-
-      map = new google.maps.Map
-      (document.getElementById("map"), mapOptions);
+      map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
 
       var latLong = new google.maps.LatLng(latitude, longitude);
@@ -74,7 +83,6 @@ $(document).ready(function(){
   // Watch your changing position
 
   function watchMapPosition() {
-
       return navigator.geolocation.watchPosition
       (onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
   }

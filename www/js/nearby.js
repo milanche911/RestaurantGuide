@@ -1,7 +1,7 @@
 $(document).ready(function(){
   // Get geo coordinates
   function getMapLocation() {
-    console.log("Upada li?");
+
       navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, options);
   }
 
