@@ -15,13 +15,26 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "cordova-plugin-websocket-server": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
-    "modules": [],
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-websocket-server/www/wsserver.js",
+            "id": "cordova-plugin-websocket-server.WebSocketServer",
+            "pluginId": "cordova-plugin-websocket-server",
+            "clobbers": [
+                "cordova.plugins.wsserver"
+            ]
+        }
+    ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.2",
         "cordova-plugin-compat": "1.0.0",
-        "cordova-plugin-geolocation": "2.2.0"
+        "cordova-plugin-geolocation": "2.2.0",
+        "cordova-plugin-websocket-server": "1.1.2"
     }
 }

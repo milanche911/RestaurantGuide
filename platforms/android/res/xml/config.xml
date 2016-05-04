@@ -8,6 +8,9 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
+    <feature name="WebSocketServer">
+        <param name="android-package" value="net.becvert.cordova.WebSocketServerPlugin" />
+    </feature>
     <allow-intent href="market:*" />
     <name>HelloCordova</name>
     <description>
