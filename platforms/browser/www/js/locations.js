@@ -1,4 +1,4 @@
-function location(id,long,lat,name,type,tel,working_time){ //class marker
+function location(id,long,lat,name,type,tel,working_time,email){ //class marker
     this.id = id;
     this.long = long;
     this.lat = lat;
@@ -6,10 +6,7 @@ function location(id,long,lat,name,type,tel,working_time){ //class marker
     this.type = type;
     this.tel = tel;
     this.working_time = working_time;
-
-    this.proba = function(){
-      console.log(this.name);
-    }
+    this.email = email;
 }
 function listOfLocation(){
   var locations = [];
@@ -21,10 +18,18 @@ function listOfLocation(){
     return locations[index];
   }
   this.getLength = function(){//vraca trenutni broj indexa
-    console.log(locations.length);
      return locations.length;
   }
   this.removeLocation = function(index){//uklanja marker
     locations.splice(index,1);
+  }
+  this.getAllLocations = function(){
+    return locations;
+  }
+  this.getLocationsInJSON = function(){
+    return JSON.stringify(locations);
+  }
+  this.setLocationsFromJSON = function(locationsInJSON){
+    locations = JSON.parse(locationsInJSON);
   }
 }
