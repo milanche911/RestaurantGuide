@@ -1,5 +1,5 @@
 function location(id,long,lat,name,type,tel,working_time,email){ //class marker
-    this.id = id;
+    this._id = id;
     this.long = long;
     this.lat = lat;
     this.name = name;

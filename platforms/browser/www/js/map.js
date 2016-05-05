@@ -88,7 +88,6 @@
        addMarker(event.latLng,"img/restaurant.png");
     });
   }
-
   // add marker on map
   function addMarker(latLong,imageUrl) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
 
@@ -116,11 +115,7 @@
         icon:image
     });
   }
-  //work with markers
-  function showOnMap(map){
-    for(var i =0; i<markers.lenght; i++)
-      markers[i].setMap(map);
-  }
+  //delete markers from map only
   function clearMarkers(){
     setMapOnAll(null);
   }

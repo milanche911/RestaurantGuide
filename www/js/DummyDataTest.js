@@ -29,6 +29,10 @@ $(document).ready(function(){
   for(var i=0;i<markers.getLength();i++)//nakon parsiranja moze da se koristi kao sto se i koristio pre
       console.log(markers.getLocation(i).name);
 
+//add new location in dataBase on server then read all locations and show on map
+
+
+
   prepareAndShowLocations(markers);
 
 });
