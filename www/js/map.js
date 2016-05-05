@@ -85,18 +85,35 @@
   //add marker on map on click
   function addMarkerOnClick(){
     google.maps.event.addListener(map, 'click', function(event) {
-       addMarker(event.latLng,"img/restaurant.png");
+      var location = new Location();
+      location.type = "Restaurant";
+       addMarker(event.latLng,location);
     });
   }
   // add marker on map
-  function addMarker(latLong,imageUrl) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
+  function addMarker(latLong,location) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
+
+    switch (location.type) {
+      case "Restaurant":
+        image = "img/restaurant.png";
+      break;
+      case "Kafana":
+        image = "img/kafana.png";
+      break;
+      case "Pub":
+        image = "img/pub.png";
+      break;
+      case "Caffe":
+        image = "img/caffe.png";
+      break;
+    }
 
       var marker = new google.maps.Marker({
           position: latLong,
           draggable:true,
           map: map,
           animation: google.maps.Animation.DROP,
-          icon:imageUrl
+          icon:image
       });
       markers.push(marker);
   }
@@ -133,20 +150,6 @@
   function prepareAndShowLocations(listOfLocation){
     var image;
       for(var i=0;i<listOfLocation.getLength();i++){
-        switch (listOfLocation.getLocation(i).type) {
-          case "Restaurant":
-            image = "img/restaurant.png";
-          break;
-          case "Kafana":
-            image = "img/kafana.png";
-          break;
-          case "Pub":
-            image = "img/pub.png";
-          break;
-          case "Caffe":
-            image = "img/caffe.png";
-          break;
-        }
-        addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),image);
+        addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),listOfLocation.getLocation(i));
       }
   }

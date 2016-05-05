@@ -30,7 +30,14 @@ $(document).ready(function(){
       console.log(markers.getLocation(i).name);
 
 //add new location in dataBase on server then read all locations and show on map
-
+// $.ajax({
+//   type: "POST",
+//   url: "http://localhost:3000/api/getAllLocations",
+//   data: location1,
+//   success: function(data){
+//
+//   }
+// });
 
 
   prepareAndShowLocations(markers);
