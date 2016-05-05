@@ -18,4 +18,7 @@ $(document).ready(function(){
 
   for(var i=0;i<markers.getLength();i++)
     markers.getLocation(i).proba();
+
+    prepareAndShowLocations(markers);
+
 });
