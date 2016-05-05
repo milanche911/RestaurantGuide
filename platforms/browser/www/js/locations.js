@@ -10,7 +10,6 @@ function location(id,long,lat,name,type,tel,working_time){ //class marker
       console.log(this.name);
     }
 }
-
 function listOfLocation(){
   var locations = [];
 
