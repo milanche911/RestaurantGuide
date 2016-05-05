@@ -6,7 +6,7 @@
   var longitude;
   function getMapLocation() {
       // getMap(43.319366, 21.898338,false);//default location Nis
-      if(map == undefined)//ako mapa nije inicijalizovana a vec je kliknuto dugme za odredjivanje lokacije
+      if(map === undefined)//ako mapa nije inicijalizovana a vec je kliknuto dugme za odredjivanje lokacije
         return;
       if(navigator)
           navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, options);
@@ -85,16 +85,19 @@
   //add marker on map on click
   function addMarkerOnClick(){
     google.maps.event.addListener(map, 'click', function(event) {
-       addMarker(event.latLng);
+       addMarker(event.latLng,"img/restaurant.png");
     });
   }
+
   // add marker on map
-  function addMarker(latLong) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
+  function addMarker(latLong,imageUrl) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
+
       var marker = new google.maps.Marker({
           position: latLong,
           draggable:true,
           map: map,
-          animation: google.maps.Animation.DROP
+          animation: google.maps.Animation.DROP,
+          icon:imageUrl
       });
       markers.push(marker);
   }
@@ -132,6 +135,23 @@
     markers = [];
   }
 
-  function prepareAndShowMarkers(listOfLocation){
-
+  function prepareAndShowLocations(listOfLocation){
+    var image;
+      for(var i=0;i<listOfLocation.getLength();i++){
+        switch (listOfLocation.getLocation(i).type) {
+          case "Restaurant":
+            image = "img/restaurant.png";
+          break;
+          case "Kafana":
+            image = "img/kafana.png";
+          break;
+          case "Pub":
+            image = "img/pub.png";
+          break;
+          case "Caffe":
+            image = "img/caffe.png";
+          break;
+        }
+        addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),image);
+      }
   }

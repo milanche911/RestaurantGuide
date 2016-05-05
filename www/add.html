@@ -71,12 +71,30 @@
 
               <!-- Text input-->
               <div class="form-group">
+                  <label class="col-md-4 control-label" for="email">E-Mail</label>
+                  <div class="col-md-4">
+                      <input id="email" name="email" type="email" placeholder="Enter e-mail" class="form-control input-md">
+
+                  </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
                   <label class="col-md-4 control-label" for="workHours">Work Hours</label>
                   <div class="col-md-2">
                       <input id="workHours-from" name="workHours-from" type="text" placeholder="From" class="form-control input-md">
                   </div>
                   <div class="col-md-2">
                       <input id="workHours-until" name="workHours-until" type="text" placeholder="Until" class="form-control input-md">
+                  </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                  <div class="col-md-4 col-md-offset-4">
+                    <button id="saveLocation" name="save-btn" type="button" class="btn btn-success">Save</button>
+                    <button id="saveToFavorites" name="save-btn" type="button" class="btn btn-primary">Save to favorites</button>
+
                   </div>
               </div>
 
@@ -92,13 +110,14 @@
         <div class="row">
             <div class="col-xs-3 text-center"><a href="index.html"><i class="glyphicon glyphicon-search"></i></br>Explore</a></div>
             <div class="col-xs-3 text-center"><a href="favorites.html"><i class="glyphicon glyphicon-heart"></i></br>Favorites</a></div>
-            <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-plus"></i></br>Add</a></div>
+            <div class="col-xs-3 text-center"><a href="add.html"><i class="glyphicon glyphicon-plus"></i></br>Add</a></div>
             <div class="col-xs-3 text-center"><a href="about.html"><i class="glyphicon glyphicon-question-sign"></i></br>About</a></div>
           </div>
         </div>
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqEVCTHSPSbFqZwhAWC-F0_z7wG1yewjM"></script>
         <script type="text/javascript" src="js/map.js"></script>
+        <script type="text/javascript" src="js/locations.js"></script>
         <script type="text/javascript" src="js/add.js"></script>
     </body>
 </html>

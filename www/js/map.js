@@ -6,7 +6,7 @@
   var longitude;
   function getMapLocation() {
       // getMap(43.319366, 21.898338,false);//default location Nis
-      if(map == undefined)//ako mapa nije inicijalizovana a vec je kliknuto dugme za odredjivanje lokacije
+      if(map === undefined)//ako mapa nije inicijalizovana a vec je kliknuto dugme za odredjivanje lokacije
         return;
       if(navigator)
           navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, options);
@@ -88,6 +88,7 @@
        addMarker(event.latLng,"img/restaurant.png");
     });
   }
+
   // add marker on map
   function addMarker(latLong,imageUrl) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
 
@@ -139,16 +140,16 @@
       for(var i=0;i<listOfLocation.getLength();i++){
         switch (listOfLocation.getLocation(i).type) {
           case "Restaurant":
-            image = "img/restaurant.png"
+            image = "img/restaurant.png";
           break;
           case "Kafana":
-            image = "img/kafana.png"
+            image = "img/kafana.png";
           break;
           case "Pub":
-            image = "img/pub.png"
+            image = "img/pub.png";
           break;
           case "Caffe":
-            image = "img/caffe.png"
+            image = "img/caffe.png";
           break;
         }
         addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),image);

@@ -46,3 +46,8 @@ html,body {
 img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"]{
   display: none;
 }
+
+
+.about{
+  background-color: rgba(228, 222, 222,0.7);
+}
