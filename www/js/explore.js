@@ -63,6 +63,12 @@ $(document).ready(function(){
       }
     }
     //instantSearch -------------------------------------------
-
-
+    function containsObject(obj, list) { // helper function for checkig if object is in the list
+        for(var i = 0; i < Object.keys(list).length; i++) {
+          if( obj._id === list[i]._id) {
+            return true;
+          }
+        }
+        return false;
+    }
 });

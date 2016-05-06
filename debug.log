@@ -14,3 +14,5 @@
 [0504/235022:ERROR:process_info.cc(608)] range at 0xff781000, size 0xf84 fully unreadable
 [0506/045634:ERROR:file_io.cc(30)] read: expected 36, observed 0
 [0506/050548:ERROR:file_io.cc(30)] read: expected 36, observed 0
+[0506/133645:ERROR:file_io.cc(30)] read: expected 36, observed 0
+[0506/165452:ERROR:file_io.cc(30)] read: expected 36, observed 0
