@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $('a[href$="add.html"]').css("color","#FFED00");
   getMap(43.319366, 21.898338,false);//default location Nis
 
   var marker;

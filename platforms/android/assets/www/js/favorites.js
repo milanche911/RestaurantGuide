@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  $('a[href$="favorites.html"]').css("color","#FFED00");
     function showFavorites() {
         $("#favorites").html("");
         var html = "";
