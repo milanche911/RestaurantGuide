@@ -37,11 +37,11 @@
       var mapOptions = {
           center: latLong,
           zoom: 15,
-          mapTypeControl: true,
-          mapTypeControlOptions: {
-              style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
-              position: google.maps.ControlPosition.LEFT_CENTER
-          },
+          mapTypeControl: false,
+          // mapTypeControlOptions: {
+          //     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+          //     position: google.maps.ControlPosition.LEFT_CENTER
+          // },
           zoomControl: true,
           zoomControlOptions: {
               position: google.maps.ControlPosition.LEFT_CENTER
@@ -166,4 +166,8 @@
       for(var i=0;i<listOfLocation.getLength();i++){
         addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),listOfLocation.getLocation(i),i);
       }
+  }
+  function setCenterOnMap(long,lat){
+    map.setCenter(new google.maps.LatLng(long,lat));
+    map.setZoom(19);
   }

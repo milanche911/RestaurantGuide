@@ -6,16 +6,21 @@
 }
 .instantSearch{
   background-color:white;
-  height: 300px;
   border-radius: 4px;
   margin-top:2px;
   -webkit-box-shadow: 9px 9px 20px -14px rgba(0,0,0,0.86);
   -moz-box-shadow: 9px 9px 20px -14px rgba(0,0,0,0.86);
   box-shadow: 9px 9px 20px -14px rgba(0,0,0,0.86);
 }
-.instantSearch .items{
-  border: black;
+.instantSearch .item{
+  padding: 5px;
+  border-bottom:1px solid rgb(233, 233, 233) ;
   border-radius: 2px;
+
+  margin: 0px;
+}
+.instantSearch .items:hover{
+  background-color:  rgb(233, 233, 233);
 }
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
