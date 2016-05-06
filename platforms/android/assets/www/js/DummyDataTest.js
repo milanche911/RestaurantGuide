@@ -30,16 +30,29 @@ $(document).ready(function(){
       console.log(markers.getLocation(i).name);
 
 //add new location in dataBase on server then read all locations and show on map
-// $.ajax({
-//   type: "POST",
-//   url: "http://localhost:3000/api/getAllLocations",
-//   data: location1,
-//   success: function(data){
-//
-//   }
-// });
+//Get all locations from server
+$.ajax({
+  type: "GET",
+  url: "http://localhost:3000/api/getAllLocations",
+  //data: location1,
+  success: function(data){
+    console.log("Server response: All locations from server:");
+    console.log(data);
+    var locations = new listOfLocation();
+    locations.setLocationsFromJSON(JSON.stringify(data));
+    prepareAndShowLocations(locations);
+  }
+});
+//insert location on server
+$.ajax({
+  type: "POST",
+  url: "http://localhost:3000/api/insertLocation",
+  data: location5,
+  success: function(data){
+    console.log("Server response: Insert locations:");
+    console.log(data);
+  }
+});
 
-
-  prepareAndShowLocations(markers);
 
 });
