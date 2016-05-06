@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+  function showFavorites() {
+    $("#favorites").html("");
     var html = "";
 
     var favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -44,7 +47,22 @@ $(document).ready(function(){
 
     $("#favorites").html(dom);
 
+    }
+
+    showFavorites();
+
     removeFromFavorites = function(id){
-      console.log(id);
+      var favorites = JSON.parse(localStorage.getItem('favorites'));
+
+        for(var i = 0; i < favorites.length; i++) {
+          if(favorites[i]._id === id) {
+            var index = favorites.indexOf(favorites[i]);
+            favorites.splice(index, 1);
+          }
+        }
+
+        localStorage.setItem('favorites',JSON.stringify(favorites));
+
+        showFavorites();
     };
 });
