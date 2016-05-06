@@ -91,7 +91,7 @@
     });
   }
   // add marker on map
-  function addMarker(latLong,location) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
+  function addMarker(latLong,location,index) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
 
     switch (location.type) {
       case "Restaurant":
@@ -113,7 +113,7 @@
                         '<div><span class="info-label">Telephone: </span><span>' + location.tel + '</span></div>'+
                         '<div><span class="info-label">email: </span><span>' + location.email + '</span></div>'+
                         '<div><span class="info-label">Working time: </span><span>' + location.working_time + '</span></div>'+
-                        '<button type="button" class="btn btn-primary btn-xs">Favorite <i class="glyphicon glyphicon-heart"></i></button></div>';
+                        '<button type="button" onclick="addToFavorites(' + index + ');" class="btn btn-primary btn-xs">Favorite <i class="glyphicon glyphicon-heart"></i></button></div>';
 
     var infoWindow = new google.maps.InfoWindow({
       content: contentString
@@ -164,6 +164,6 @@
 
   function prepareAndShowLocations(listOfLocation){
       for(var i=0;i<listOfLocation.getLength();i++){
-        addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),listOfLocation.getLocation(i));
+        addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),listOfLocation.getLocation(i),i);
       }
   }
