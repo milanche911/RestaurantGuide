@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-  var urlDomain = "192.168.0.101";
+  var urlDomain = "localhost";
 
       getMap(43.319366, 21.898338,false);//default location Nis
 
