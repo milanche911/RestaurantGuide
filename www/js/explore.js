@@ -55,9 +55,9 @@ $(document).ready(function(){
       showInstantSearch =function(){//poziva se kada se klikne na search input field
         $(".instantSearch").show();
       };
-      showSearchedLocationOnMap = function(long,lat){//poziva se kada se klikne na neki item iz instantSearch
+      showSearchedLocationOnMap = function(lat,lng){//poziva se kada se klikne na neki item iz instantSearch
         $(".instantSearch").hide();
-        setCenterOnMap(long,lat);
+        setCenterOnMap(lat,lng);
       };
       searchLocation = function(){
         $(".instantSearch").children().first().click();
@@ -81,7 +81,7 @@ $(document).ready(function(){
               for(var i=0;i<searchLocation.getLength();i++){
                 $(".instantSearch").append(
                 '<p class="item" onclick=showSearchedLocationOnMap('+
-                searchLocation.getLocation(i).long +','+ searchLocation.getLocation(i).lat +') >'+
+                searchLocation.getLocation(i).lat +','+ searchLocation.getLocation(i).lng +') >'+
                 searchLocation.getLocation(i).name +'</p>');
               }
             }
