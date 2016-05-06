@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  var urlDomain = "localhost";
+
   $('a[href$="add.html"]').css("color","#9AFF9C");
 
   $("#locationForm").submit(function(e){ //prevent default behaviour for Form
@@ -34,15 +36,27 @@ $(document).ready(function(){
      }else{
        var newLocation = new location(
          0,
-         marker.position.lng(),
          marker.position.lat(),
+         marker.position.lng(),
          $("#locationName").val(),
          $("#locationType").val(),
          $("#telephone").val(),
-         $("#working_time-from").val() +" "+ $("#working_time-until").val(),
+         $("#working_time-from").val().toString() +"-"+ $("#working_time-until").val().toString()+"h",
          $("#email").val()
        );
+       delete newLocation._id;
        console.log(newLocation);
+
+       $.ajax({
+         type: "POST",
+         url: "http://"+urlDomain+":3000/api/insertLocation",
+         data: newLocation,
+         success: function(data){
+          //  $("#saveBtn").disable();
+           $("#saveBtn").html("New location inserted");
+         }
+       });
      }
   }
+
 });

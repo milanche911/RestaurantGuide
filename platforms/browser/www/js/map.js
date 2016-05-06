@@ -20,11 +20,11 @@
       latitude = position.coords.latitude;
       longitude = position.coords.longitude;
 
-      var latLong = new google.maps.LatLng(latitude, longitude);
+      var latLng = new google.maps.LatLng(latitude, longitude);
 
-      map.setCenter(latLong);
+      map.setCenter(latLng);
       map.setZoom(19);
-      addMarkerForCurrentLocation(latLong);
+      addMarkerForCurrentLocation(latLng);
   };
 
   //Options
@@ -33,9 +33,9 @@
   // Get map by using coordinates
   function getMap(latitude, longitude) {
 
-      var latLong = new google.maps.LatLng(latitude, longitude);
+      var latLng = new google.maps.LatLng(latitude, longitude);
       var mapOptions = {
-          center: latLong,
+          center: latLng,
           zoom: 15,
           mapTypeControl: false,
           // mapTypeControlOptions: {
@@ -91,7 +91,7 @@
     });
   }
   // add marker on map
-  function addMarker(latLong,location,index) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
+  function addMarker(latLng,location,index) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
 
     switch (location.type) {
       case "Restaurant":
@@ -120,7 +120,7 @@
     });
 
       var marker = new google.maps.Marker({
-          position: latLong,
+          position: latLng,
           map: map,
           animation: google.maps.Animation.DROP,
           icon:image
@@ -133,13 +133,13 @@
       markers.push(marker);
   }
   //set marker for current Location
-  function addMarkerForCurrentLocation(latLong){
+  function addMarkerForCurrentLocation(latLng){
     if(markerCurrentLocation)
       markerCurrentLocation.setMap(null);
 
     var image = "img/bluedot.png";
     markerCurrentLocation = new google.maps.Marker({
-        position: latLong,
+        position: latLng,
         draggable:false,
         map: map,
         title:"You are here!",
@@ -164,10 +164,10 @@
 
   function prepareAndShowLocations(listOfLocation){
       for(var i=0;i<listOfLocation.getLength();i++){
-        addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),listOfLocation.getLocation(i),i);
+        addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).lat, listOfLocation.getLocation(i).lng),listOfLocation.getLocation(i),i);
       }
   }
-  function setCenterOnMap(long,lat){
-    map.setCenter(new google.maps.LatLng(long,lat));
+  function setCenterOnMap(lat,lng){
+    map.setCenter(new google.maps.LatLng(lat,lng));
     map.setZoom(19);
   }

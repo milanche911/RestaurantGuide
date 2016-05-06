@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-  var urlDomain = "192.168.0.101";
+  var urlDomain = "localhost";
 
   $('a[href$="index.html"]').css("color","#9AFF9C");
 
@@ -50,9 +50,9 @@ $(document).ready(function(){
       showInstantSearch =function(){//poziva se kada se klikne na search input field
         $(".instantSearch").show();
       };
-      showSearchedLocationOnMap = function(long,lat){//poziva se kada se klikne na neki item iz instantSearch
+      showSearchedLocationOnMap = function(lat,lng){//poziva se kada se klikne na neki item iz instantSearch
         $(".instantSearch").hide();
-        setCenterOnMap(long,lat);
+        setCenterOnMap(lat,lng);
       };
       searchLocation = function(){
         $(".instantSearch").children().first().click();
@@ -76,7 +76,7 @@ $(document).ready(function(){
               for(var i=0;i<searchLocation.getLength();i++){
                 $(".instantSearch").append(
                 '<p class="item" onclick=showSearchedLocationOnMap('+
-                searchLocation.getLocation(i).long +','+ searchLocation.getLocation(i).lat +') >'+
+                searchLocation.getLocation(i).lat +','+ searchLocation.getLocation(i).lng +') >'+
                 searchLocation.getLocation(i).name +'</p>');
               }
             }
