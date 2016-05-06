@@ -148,7 +148,6 @@
   }
 
   function prepareAndShowLocations(listOfLocation){
-    var image;
       for(var i=0;i<listOfLocation.getLength();i++){
         addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).long, listOfLocation.getLocation(i).lat),listOfLocation.getLocation(i));
       }
