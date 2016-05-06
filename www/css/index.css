@@ -51,3 +51,17 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"]{
 .about{
   background-color: rgba(228, 222, 222,0.7);
 }
+
+/*Marker info window*/
+.info-label {
+  font-weight: bold;
+}
+
+#info-window > div {
+  margin-bottom: 5px;
+}
+
+#info-window > button {
+  display: block;
+  margin: 0 auto;
+}
