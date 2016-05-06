@@ -6,10 +6,4 @@ $(document).ready(function(){
     $("#currentLocation").click(function CurrentPosition(){
       getMapLocation();
   });
-  
-
-
 });
-function addToFavorites(index){
-
-}
