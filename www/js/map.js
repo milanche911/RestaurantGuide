@@ -108,6 +108,16 @@
       break;
     }
 
+    var contentString = '<div><span>Name: </span><span>' + location.name + '</span></div>'+
+                        '<div><span>Type: </span><span>' + location.type + '</span></div>'+
+                        '<div><span>Telephone: </span><span>' + location.tel + '</span></div>'+
+                        '<div><span>email: </span><span>' + location.email + '</span></div>'+
+                        '<div><span>Working time: </span><span>' + location.working_time + '</span></div>';
+
+    var infoWindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
       var marker = new google.maps.Marker({
           position: latLong,
           draggable:true,
@@ -115,6 +125,11 @@
           animation: google.maps.Animation.DROP,
           icon:image
       });
+
+      marker.addListener("click", function() {
+        infoWindow.open(map, marker);
+      });
+
       markers.push(marker);
   }
   //set marker for current Location
