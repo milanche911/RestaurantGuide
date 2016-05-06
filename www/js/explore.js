@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.0.101";
 
   $('a[href$="index.html"]').css("color","#9AFF9C");
 
@@ -15,9 +15,8 @@ $(document).ready(function(){
         url: "http://"+urlDomain+":3000/api/getAllLocations",
         //data: location1,
         success: function(data){
-          console.log("Server response: All locations from server:");
-          console.log(data);
-
+          // console.log("Server response: All locations from server:");
+          // console.log(data);
           locations.setLocationsFromJSON(JSON.stringify(data));
           prepareAndShowLocations(locations);
         }
@@ -60,7 +59,6 @@ $(document).ready(function(){
       };
       instantSearch = function(){
         if($("#searchImput").val()===""){
-          console.log("val==0");
           $(".instantSearch").empty();
           return;
         }else{
@@ -68,7 +66,7 @@ $(document).ready(function(){
           //ajax GET Server
           $.ajax({
             type: "GET",
-            url: "http://"+urlDomain+":3000/api/getLocationByName",
+            url: "http://"+urlDomain+":3000/api/search",
             data: {"query" : $("#searchImput").val(),"type":types},
             success: function(data){
               $(".instantSearch").empty();
