@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.0.101";
 
       getMap(43.319366, 21.898338,false);//default location Nis
 
@@ -21,6 +21,7 @@ $(document).ready(function(){
         }
       });
 
+      //Favorites -------------------------------------------
       function containsObject(obj, list) { // helper function for checkig if object is in the list
           for(var i = 0; i < Object.keys(list).length; i++) {
             if( obj._id === list[i]._id) {
@@ -43,8 +44,8 @@ $(document).ready(function(){
         }
         localStorage.setItem('favorites',JSON.stringify(favorites)); //saving in local storage
       };
-
-      //instantSearch -------------------------------------------
+      //End of Favorites -------------------------------------------
+      //InstantSearch -------------------------------------------
       showInstantSearch =function(){//poziva se kada se klikne na search input field
         $(".instantSearch").show();
       };
@@ -61,11 +62,12 @@ $(document).ready(function(){
           $(".instantSearch").empty();
           return;
         }else{
-          // console.log($("#searchImput").val());
+          var types = getAllSelectedTypes();//get all selected checkBox
+          //ajax GET Server
           $.ajax({
             type: "GET",
             url: "http://"+urlDomain+":3000/api/getLocationByName",
-            data: {"query" : $("#searchImput").val()},
+            data: {"query" : $("#searchImput").val(),"type":types},
             success: function(data){
               $(".instantSearch").empty();
               // console.log(data);
@@ -81,6 +83,23 @@ $(document).ready(function(){
           });
       }
     };
-    //instantSearch -------------------------------------------
+    //returns all selected checkBox type of locations
+    getAllSelectedTypes = function(){
+      var types = [];
+      if($("#checkboxRestaurant").is(':checked')){
+        types.push($("#checkboxRestaurant").val());
+      }
+      if($("#checkboxCaffe").is(':checked')){
+        types.push($("#checkboxCaffe").val());
+      }
+      if($("#checkboxKafana").is(':checked')){
+        types.push($("#checkboxKafana").val());
+      }
+      if($("#checkboxPub").is(':checked')){
+        types.push($("#checkboxPub").val());
+      }
+      return types;
+    }
+    //InstantSearch -------------------------------------------
 
 });

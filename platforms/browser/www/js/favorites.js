@@ -26,18 +26,21 @@ $(document).ready(function() {
                     break;
             }
 
-            html += '<div class="media">' +
+            html += '<hr>' +
+                '<div class="media">' +
                 '<div class="media-left">' +
                 '<a href="#">' +
                 '<img class="media-object" src="' + image + '" alt="...">' +
                 '</a>' +
                 '</div>' +
-                '<div class="media-body">' +
+                '<div class="media-left media-body">' +
                 '<h4 class="media-heading">' + favorites[i].name + '</h4>' +
                 '<div><span class="info-label">Type: </span><span>' + favorites[i].type + '</span></div>' +
                 '<div><span class="info-label">Telephone: </span><span>' + favorites[i].tel + '</span></div>' +
                 '<div><span class="info-label">email: </span><span>' + favorites[i].email + '</span></div>' +
                 '<div><span class="info-label">Working time: </span><span>' + favorites[i].working_time + '</span></div>' +
+                '</div>' +
+                '<div class="media-right">' +
                 '<button type="button" class="btn btn-danger btn-sm" onclick=removeFromFavorites("' + favorites[i]._id + '");>Delete <i class="glyphicon glyphicon-trash"></i></button>' +
                 '</div>' +
                 '</div><hr>';
