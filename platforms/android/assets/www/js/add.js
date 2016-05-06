@@ -39,10 +39,10 @@ $(document).ready(function(){
          $("#locationName").val(),
          $("#locationType").val(),
          $("#telephone").val(),
-         $("#email").val(),
-         $("#working_time-from").val() + $("#working_time-until").val()
+         $("#working_time-from").val() +" "+ $("#working_time-until").val(),
+         $("#email").val()
        );
        console.log(newLocation);
      }
-  }
+  };
 });

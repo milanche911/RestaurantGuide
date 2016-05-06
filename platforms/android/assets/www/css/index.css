@@ -67,3 +67,12 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"]{
   display: block;
   margin: 0 auto;
 }
+
+.btns {
+  display: inline-block;
+  widows: 100%;
+}
+
+.btns button {
+  margin: 0 10px;
+}

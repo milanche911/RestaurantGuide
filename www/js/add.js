@@ -44,5 +44,5 @@ $(document).ready(function(){
        );
        console.log(newLocation);
      }
-  }
+  };
 });

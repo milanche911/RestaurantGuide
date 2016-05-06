@@ -46,6 +46,11 @@ $(document).ready(function(){
         localStorage.setItem('favorites',JSON.stringify(favorites)); //saving in local storage
       };
       //End of Favorites -------------------------------------------
+
+      deleteMarker = function(index) {
+        console.log(index);
+      };
+
       //InstantSearch -------------------------------------------
       showInstantSearch =function(){//poziva se kada se klikne na search input field
         $(".instantSearch").show();
@@ -99,7 +104,6 @@ $(document).ready(function(){
         types.push($("#checkboxPub").val());
       }
       return types;
-    }
-    //InstantSearch -------------------------------------------
+    };
 
 });
