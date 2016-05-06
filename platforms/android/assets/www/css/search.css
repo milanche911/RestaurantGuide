@@ -4,6 +4,19 @@
   left: 5px;
   z-index: 999;
 }
+.instantSearch{
+  background-color:white;
+  height: 300px;
+  border-radius: 4px;
+  margin-top:2px;
+  -webkit-box-shadow: 9px 9px 20px -14px rgba(0,0,0,0.86);
+  -moz-box-shadow: 9px 9px 20px -14px rgba(0,0,0,0.86);
+  box-shadow: 9px 9px 20px -14px rgba(0,0,0,0.86);
+}
+.instantSearch .items{
+  border: black;
+  border-radius: 2px;
+}
 .dropdown.dropdown-lg .dropdown-menu {
     margin-top: -1px;
     padding: 6px 20px;
