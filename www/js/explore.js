@@ -21,23 +21,42 @@ $(document).ready(function(){
         }
       });
 
-      addToFavorites = function(index){
-        console.log(locations.getLocation(index));
+      function containsObject(obj, list) { // helper function for checkig if object is in the list
+          for(var i = 0; i < Object.keys(list).length; i++) {
+            if( obj._id === list[i]._id) {
+              return true;
+            }
+          }
+          return false;
       }
+
+      addToFavorites = function(index){ //adding distinct favorites into the local storage
+        // console.log(locations.getLocation(index));
+        var favorites = [];
+        favorites = JSON.parse(localStorage.getItem('favorites'));
+        if(favorites === null) {
+          favorites = [];
+        }
+        var location = locations.getLocation(index);
+        if(containsObject(location, favorites) === false) { //check if it is already in favorites if not then push it
+          favorites.push(location);
+        }
+        localStorage.setItem('favorites',JSON.stringify(favorites)); //saving in local storage
+      };
 
       //instantSearch -------------------------------------------
       showInstantSearch =function(){//poziva se kada se klikne na search input field
         $(".instantSearch").show();
-      }
+      };
       showSearchedLocationOnMap = function(long,lat){//poziva se kada se klikne na neki item iz instantSearch
         $(".instantSearch").hide();
         setCenterOnMap(long,lat);
-      }
+      };
       searchLocation = function(){
         $(".instantSearch").children().first().click();
-      }
+      };
       instantSearch = function(){
-        if($("#searchImput").val()==""){
+        if($("#searchImput").val()===""){
           console.log("val==0");
           $(".instantSearch").empty();
           return;
@@ -61,14 +80,7 @@ $(document).ready(function(){
             }
           });
       }
-    }
+    };
     //instantSearch -------------------------------------------
-    function containsObject(obj, list) { // helper function for checkig if object is in the list
-        for(var i = 0; i < Object.keys(list).length; i++) {
-          if( obj._id === list[i]._id) {
-            return true;
-          }
-        }
-        return false;
-    }
+
 });
