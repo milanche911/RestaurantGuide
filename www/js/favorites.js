@@ -35,7 +35,7 @@ $(document).ready(function(){
                 '<div><span class="info-label">Telephone: </span><span>' + favorites[i].tel + '</span></div>'+
                 '<div><span class="info-label">email: </span><span>' + favorites[i].email + '</span></div>'+
                 '<div><span class="info-label">Working time: </span><span>' + favorites[i].working_time + '</span></div>'+
-                '<button type="button" class="btn btn-danger btn-sm" onclick="removeFromFavorites(' + favorites[i]._id + ');">Delete <i class="glyphicon glyphicon-trash"></i></button>'+
+                '<button type="button" class="btn btn-danger btn-sm" onclick=removeFromFavorites("' + favorites[i]._id + '");>Delete <i class="glyphicon glyphicon-trash"></i></button>'+
                 '</div>'+
                 '</div><hr>';
     }
