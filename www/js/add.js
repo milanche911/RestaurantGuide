@@ -34,11 +34,15 @@ $(document).ready(function(){
      }else{
        var newLocation = new location(
          0,
-         marker.position.lat(),
          marker.position.lng(),
-         $("");
-
+         marker.position.lat(),
+         $("#locationName").val(),
+         $("#locationType").val(),
+         $("#telephone").val(),
+         $("#working_time-from").val() +" "+ $("#working_time-until").val(),
+         $("#email").val()
        );
+       console.log(newLocation);
      }
   }
 });
