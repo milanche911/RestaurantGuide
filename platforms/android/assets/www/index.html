@@ -18,7 +18,7 @@
 
 <body>
 
-  <form class="form-horizontal" id="locationForm">
+  <form class="form-horizontal" id="deleteForm">
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -55,6 +55,31 @@
     </div>
   </form>
     <!-- /.modal -->
+
+    <form class="form-horizontal" id="takePhotoForm">
+      <div class="modal fade" id="takePhotoModal" tabindex="-1" role="dialog">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Gallery</h4>
+                  </div>
+                  <div class="modal-body">
+
+                  <img id="photo" src="http://lorempixel.com/g/400/200/" alt="" />
+
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick=takePhoto();>Take A Photo <i class="glyphicon glyphicon-camera"></i></button>
+                  </div>
+              </div>
+              <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+    </form>
+      <!-- /.modal -->
 
     <div id="map"></div>
     <div id="currentLocation" class="currentLocation"><a href="#"><i class="glyphicon glyphicon-map-marker"></i></div>
@@ -113,6 +138,7 @@
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="js/explore.js"></script>
     <script type="text/javascript" src="js/locations.js"></script>
+    <script type="text/javascript" src="js/camera.js"></script>
     <!-- <script type="text/javascript" src="js/dummyDataTest.js"></script> -->
 </body>
 

@@ -1,5 +1,9 @@
 $(document).ready(function(){
+<<<<<<< HEAD
   var urlDomain = "192.168.0.101";
+=======
+  var urlDomain = "192.168.56.101";
+>>>>>>> 546dc346e24e3fcf2d5eb123a5974ae1f161a698
 
   $('a[href$="add.html"]').css("color","#9AFF9C");
 
