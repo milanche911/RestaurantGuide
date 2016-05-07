@@ -114,12 +114,8 @@
                         '<div><span class="info-label">email: </span><span>' + location.email + '</span></div>'+
                         '<div><span class="info-label">Working time: </span><span>' + location.working_time + '</span></div>'+
                         '<div class="btns"><button type="button" onclick="addToFavorites(' + index + ');" class="btn btn-primary btn-xs">Favorite <i class="glyphicon glyphicon-heart"></i></button>'+
-<<<<<<< HEAD
-                        '<button type="button" onclick="setIndexInModal(' + index + ');" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Delete <i class="glyphicon glyphicon-trash"></i></button></div></div>';
-=======
-                        '<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#takePhotoModal">Gallery <i class="glyphicon glyphicon-camera"></i></button>'+
-                        '<button type="button" onclick="deleteMarker(' + index + ');" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Delete <i class="glyphicon glyphicon-trash"></i></button></div></div>';
->>>>>>> 546dc346e24e3fcf2d5eb123a5974ae1f161a698
+                        '<button type="button" onclick="setIndexInModal(' + index + ');" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Delete <i class="glyphicon glyphicon-trash"></i></button></div></div>'+
+                        '<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#takePhotoModal">Gallery <i class="glyphicon glyphicon-camera"></i></button>';
 
     var infoWindow = new google.maps.InfoWindow({
       content: contentString
@@ -159,7 +155,7 @@
   }
   //show all markers in array on map
   function setMapOnAll(map){
-    for(var i = 0;i<markers.lenght;i++)
+    for(var i = 0;i<markers.length;i++)
       markers[i].setMap(map);
   }
   //delete all markers from map and array
@@ -169,6 +165,7 @@
   }
 
   function prepareAndShowLocations(listOfLocation){
+      deleteMarkers();
       for(var i=0;i<listOfLocation.getLength();i++){
         addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).lat, listOfLocation.getLocation(i).lng),listOfLocation.getLocation(i),i);
       }
