@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.56.101";
 
   $('a[href$="index.html"]').css("color","#9AFF9C");
 

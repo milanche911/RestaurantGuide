@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.56.101";
 
   $('a[href$="add.html"]').css("color","#9AFF9C");
 
@@ -41,11 +41,7 @@ $(document).ready(function(){
          $("#locationName").val(),
          $("#locationType").val(),
          $("#telephone").val(),
-<<<<<<< HEAD
-         $("#working_time-from").val() +" "+ $("#working_time-until").val(),
-=======
          $("#working_time-from").val().toString() +"-"+ $("#working_time-until").val().toString()+"h",
->>>>>>> 979b4c5a5dcde5613f2de23e710b86bb72d9be25
          $("#email").val()
        );
        delete newLocation._id;
@@ -61,10 +57,7 @@ $(document).ready(function(){
          }
        });
      }
-<<<<<<< HEAD
-  };
-=======
-  }
 
->>>>>>> 979b4c5a5dcde5613f2de23e710b86bb72d9be25
+  };
+
 });

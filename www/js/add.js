@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.56.101";
 
   $('a[href$="add.html"]').css("color","#9AFF9C");
 
