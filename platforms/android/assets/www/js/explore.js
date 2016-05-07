@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.0.101";
 
   $('a[href$="index.html"]').css("color","#9AFF9C");
 
@@ -46,12 +46,16 @@ $(document).ready(function(){
         localStorage.setItem('favorites',JSON.stringify(favorites)); //saving in local storage
       };
       //End of Favorites -------------------------------------------
-
+      //DeleteMarker -----------------------------------------------
       deleteMarker = function(index) {
+        $("#deleteMarkerBtn").on( "click", deleteMarkerFromDataBase(location.getLocation(index)._id));
         console.log(index);
       };
-
-      //InstantSearch -------------------------------------------
+      deleteMarkerFromDataBase = function(id){
+        console.log(id);
+      }
+      //End of DeleteMarker ----------------------------------------
+      //InstantSearch ----------------------------------------------
       showInstantSearch =function(){//poziva se kada se klikne na search input field
         $(".instantSearch").show();
       };

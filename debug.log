@@ -16,3 +16,4 @@
 [0506/050548:ERROR:file_io.cc(30)] read: expected 36, observed 0
 [0506/133645:ERROR:file_io.cc(30)] read: expected 36, observed 0
 [0506/165452:ERROR:file_io.cc(30)] read: expected 36, observed 0
+[0507/021100:ERROR:file_io.cc(30)] read: expected 36, observed 0

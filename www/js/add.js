@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.0.101";
 
   $('a[href$="add.html"]').css("color","#9AFF9C");
 
@@ -11,7 +11,7 @@ $(document).ready(function(){
   var marker;
 
   function placeMarker(location) {
-    console.log(marker);
+    //console.log(marker);
     if (marker) {
       marker.setPosition(location);
     } else {
@@ -52,7 +52,7 @@ $(document).ready(function(){
          url: "http://"+urlDomain+":3000/api/insertLocation",
          data: newLocation,
          success: function(data){
-          //  $("#saveBtn").disable();
+           $("#saveBtn").attr("disabled", true);
            $("#saveBtn").html("New location inserted");
          }
        });

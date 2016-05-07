@@ -8,6 +8,11 @@ html,body {
   width: 100%;
   height: 100%;
 }
+#infoLabel{
+  text-align: center;
+  display: block;
+  color: red;
+}
 /*Footer*/
 
 .footer {

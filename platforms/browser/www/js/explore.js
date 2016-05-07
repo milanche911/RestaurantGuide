@@ -1,6 +1,10 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-  var urlDomain = "localhost";
+  var urlDomain = "192.168.0.101";
+
+  $("#locationForm").submit(function(e){ //prevent default behaviour for Form
+      e.preventDefault();
+    });
 
   $('a[href$="index.html"]').css("color","#9AFF9C");
 
@@ -46,12 +50,40 @@ $(document).ready(function(){
         localStorage.setItem('favorites',JSON.stringify(favorites)); //saving in local storage
       };
       //End of Favorites -------------------------------------------
-
-      deleteMarker = function(index) {
-        console.log(index);
+      //DeleteMarker -----------------------------------------------
+      setIndexInModal = function(index) {
+        $("#deleteMarkerBtn").attr("value",index);
+        $("#deleteMarkerBtn").attr("disabled", false);// enable againg delete btn for next delete
+        $("#infoLabel").html("");
       };
+      deleteMarkerFromDataBase = function(){
+        if($("#username").val()==""||$("#password").val()=="")//ne znam zasto form nece da odradi poso da blokira dugme dok se sve ne ispuni
+          return;
 
-      //InstantSearch -------------------------------------------
+        var id = locations.getLocation($("#deleteMarkerBtn").attr("value"))._id;//get id for selected location
+        var username =  $("#username").val();
+        var password = $("#password").val();
+
+        $.ajax({
+          type: "GET",
+          url: "http://"+urlDomain+":3000/api/deleteLocation",
+          data: {"id":id, "username":username, "password":password},//id value and admin info
+          success: function(data){
+            if(data=="SUCCESS"){
+              $("#infoLabel").html("Successfully deleted");
+              $("#deleteMarkerBtn").attr("disabled", true);// prevent double delete
+              //if delete is ok then show locations again
+              var index = $("#deleteMarkerBtn").attr("value");
+              locations.removeLocation(index);//remove deleted location from local array
+              prepareAndShowLocations(locations);
+            }else if(data=="WRONG USERNAME AND PASSWORD"){
+              $("#infoLabel").html("Wrong username and password");
+            }
+          }
+        });
+      }
+      //End of DeleteMarker ----------------------------------------
+      //InstantSearch ----------------------------------------------
       showInstantSearch =function(){//poziva se kada se klikne na search input field
         $(".instantSearch").show();
       };

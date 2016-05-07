@@ -27,26 +27,26 @@
                     <h4 class="modal-title">Please Sign in to delete marker</h4>
                 </div>
                 <div class="modal-body">
-
                     <fieldset>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="e-mail">E-Mail</label>
+                            <label class="col-md-4 control-label" for="username">Username</label>
                             <div class="col-md-4">
-                                <input id="e-mail" name="e-mail" type="email" placeholder="Enter yout e-mail" class="form-control input-md" required>
+                                <input id="username" type="username" placeholder="Enter your username" class="form-control input-md" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="password">Password</label>
                             <div class="col-md-4">
-                                <input id="password"  name="password" type="password" class="form-control input-md"  required>
+                                <input id="password" type="password" placeholder="Enter your password" class="form-control input-md"  required>
                             </div>
                         </div>
+                        <label id="infoLabel"></label>
                       </fieldset>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Delete <i class="glyphicon glyphicon-trash"></i></button>
+                    <button type="submit" id="deleteMarkerBtn" onclick="deleteMarkerFromDataBase()"class="btn btn-danger">Delete<i class="glyphicon glyphicon-trash"></i></button>
                 </div>
             </div>
             <!-- /.modal-content -->
