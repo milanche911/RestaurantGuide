@@ -1,15 +1,11 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
-<<<<<<< HEAD
+
   var urlDomain = "192.168.0.101";
 
   $("#locationForm").submit(function(e){ //prevent default behaviour for Form
       e.preventDefault();
     });
-=======
-  var urlDomain = "192.168.56.101";
->>>>>>> 546dc346e24e3fcf2d5eb123a5974ae1f161a698
-
   $('a[href$="index.html"]').css("color","#9AFF9C");
 
       getMap(43.319366, 21.898338,false);//default location Nis
