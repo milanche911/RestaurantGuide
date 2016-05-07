@@ -1,5 +1,4 @@
 $(document).ready(function(){
-<<<<<<< HEAD
   var urlDomain = "192.168.0.101";
 
   $('a[href$="add.html"]').css("color","#9AFF9C");
