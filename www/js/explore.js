@@ -1,7 +1,7 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
 
-  var urlDomain = "192.168.0.101";
+  var urlDomain = "localhost";
 
   $("#locationForm").submit(function(e){ //prevent default behaviour for Form
       e.preventDefault();
