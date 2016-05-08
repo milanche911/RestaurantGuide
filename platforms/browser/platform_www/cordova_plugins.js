@@ -29,15 +29,24 @@ module.exports = [
         "id": "cordova-plugin-camera.CameraProxy",
         "pluginId": "cordova-plugin-camera",
         "runs": true
+    },
+    {
+        "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+        "id": "onesignal-cordova-plugin.OneSignal",
+        "pluginId": "onesignal-cordova-plugin",
+        "clobbers": [
+            "OneSignal"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-compat": "1.0.0",
+    "cordova-plugin-camera": "2.2.0",
     "cordova-plugin-geolocation": "2.2.0",
-    "cordova-plugin-camera": "2.2.1-dev"
+    "cordova-plugin-whitelist": "1.2.2",
+    "onesignal-cordova-plugin": "1.12.4"
 }
 // BOTTOM OF METADATA
 });

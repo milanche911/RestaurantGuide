@@ -1,5 +1,5 @@
 /*jshint node: true, jasmine: true */
-
+/* global navigator, Q */
 /*
  *
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -67,13 +67,21 @@ describe('Camera tests iOS.', function () {
     // generates test specs by combining all the specified options
     // you can add more options to test more scenarios
     function generateSpecs() {
-        var sourceTypes = cameraConstants.PictureSourceType;
-        var destinationTypes = cameraConstants.DestinationType;
-        var encodingTypes = cameraConstants.EncodingType;
-        var allowEditOptions = [ true, false ];
-        var correctOrientationOptions = [ true, false ];
+        var sourceTypes = [
+                cameraConstants.PictureSourceType.CAMERA,
+                cameraConstants.PictureSourceType.PHOTOLIBRARY
+            ],
+            destinationTypes = cameraConstants.DestinationType,
+            encodingTypes = [
+                cameraConstants.EncodingType.JPEG,
+                cameraConstants.EncodingType.PNG
+            ],
+            allowEditOptions = [
+                true,
+                false
+            ];
 
-        return cameraHelper.generateSpecs(sourceTypes, destinationTypes, encodingTypes, allowEditOptions, correctOrientationOptions);
+        return cameraHelper.generateSpecs(sourceTypes, destinationTypes, encodingTypes, allowEditOptions);
     }
 
     function usePicture() {
@@ -237,7 +245,7 @@ describe('Camera tests iOS.', function () {
 
         // combine various options for getPicture()
         generateSpecs().forEach(function (spec) {
-            it('camera.ui.spec.3.' + spec.id + ' Combining options. ' + spec.description, function (done) {
+            it('camera.ui.spec.3.' + spec.id + ' Combining options', function (done) {
                 // camera is not available on iOS simulator
                 if (!isDevice && spec.options.sourceType === cameraConstants.PictureSourceType.CAMERA) {
                     pending();
@@ -252,5 +260,5 @@ describe('Camera tests iOS.', function () {
         driver
             .quit()
             .done(done);
-    }, 5 * MINUTE);
+    }, MINUTE);
 });

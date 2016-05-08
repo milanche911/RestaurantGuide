@@ -18,16 +18,19 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-compat": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-plugin-compat": {
+        "cordova-plugin-camera": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-plugin-camera": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "onesignal-cordova-plugin": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
@@ -62,12 +65,21 @@
             "id": "cordova-plugin-camera.CameraProxy",
             "pluginId": "cordova-plugin-camera",
             "runs": true
+        },
+        {
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "pluginId": "onesignal-cordova-plugin",
+            "clobbers": [
+                "OneSignal"
+            ]
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-whitelist": "1.2.2",
         "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-camera": "2.2.0",
         "cordova-plugin-geolocation": "2.2.0",
-        "cordova-plugin-camera": "2.2.1-dev"
+        "cordova-plugin-whitelist": "1.2.2",
+        "onesignal-cordova-plugin": "1.12.4"
     }
 }

@@ -1,6 +1,4 @@
-$(document).ready(function() {
-
-
+document.addEventListener('deviceready', function () {
         console.log(navigator.camera);
 
 
@@ -25,7 +23,7 @@ $(document).ready(function() {
 
             var srcType = Camera.PictureSourceType.CAMERA;
             var options = setOptions(srcType);
-            var func = createNewFileEntry;
+            // var func = createNewFileEntry;
 
             navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
@@ -49,4 +47,4 @@ $(document).ready(function() {
 
     };
 
-});
+}, false);
