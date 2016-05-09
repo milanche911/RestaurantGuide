@@ -18,6 +18,31 @@ document.addEventListener('deviceready', function () {
             return options;
         }
 
+        function openFilePicker(selection) {
+
+            var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
+            var options = setOptions(srcType);
+            var func = createNewFileEntry;
+
+            if (selection == "picker-thmb") {
+                // To downscale a selected image,
+                // Camera.EncodingType (e.g., JPEG) must match the selected image type.
+                options.targetHeight = 100;
+                options.targetWidth = 100;
+            }
+
+            navigator.camera.getPicture(function cameraSuccess(imageUri) {
+              displayImage(imageUri);
+              // You may choose to copy the picture, save it somewhere, or upload.
+              func(imageUri);
+                // Do something
+
+            }, function cameraError(error) {
+                console.debug("Unable to obtain picture: " + error, "app");
+
+            }, options);
+        }
+
         function openCamera(selection) {
 
             var srcType = Camera.PictureSourceType.CAMERA;
