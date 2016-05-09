@@ -44,7 +44,7 @@
           // },
           zoomControl: true,
           zoomControlOptions: {
-              position: google.maps.ControlPosition.LEFT_CENTER
+              position: google.maps.ControlPosition.RIGHT_CENTER
           },
           scaleControl: true,
           streetViewControl: false,
