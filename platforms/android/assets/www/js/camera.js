@@ -1,7 +1,6 @@
 document.addEventListener('deviceready', function () {
         console.log(navigator.camera);
 
-
     takePhoto = function() {
 
         function setOptions() {

@@ -44,15 +44,14 @@ $(document).ready(function(){
          $("#working_time-from").val().toString() +"-"+ $("#working_time-until").val().toString()+"h",
          $("#email").val()
        );
-       delete newLocation._id;
-       console.log(newLocation);
-
+       delete newLocation._id;//server ocekuje lokaciju bez _id
+       //console.log(newLocation);
+       $("#saveBtn").attr("disabled", true);
        $.ajax({
          type: "POST",
          url: "http://"+urlDomain+":3000/api/insertLocation",
          data: newLocation,
          success: function(data){
-           $("#saveBtn").attr("disabled", true);
            $("#saveBtn").html("New location inserted");
          }
        });
