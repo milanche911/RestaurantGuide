@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Setings</title>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <form class="form-horizontal" id="locationForm">
+          <fieldset>
+              <!-- Form Name -->
+              <legend style="text-align: center;">Setings</legend>
+
+              <!-- Text input-->
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="urlDomain">IP adress for domain</label>
+                  <div class="col-md-4">
+                      <input id="urlDomain" type="text" placeholder="Default is localHost" class="form-control input-md">
+                  </div>
+              </div>
+              <!-- CheckBox input-->
+              <div class="form-group">
+                  <label class="col-md-4 control-label" for="pushNotification">Recive Push Notifications</label>
+                  <div class="col-md-4">
+                      <input id="subscription" type="checkbox" class="form-control input-md">
+                  </div>
+              </div>
+              <!-- Text input-->
+              <div class="form-group">
+                  <div class="col-md-4 col-md-offset-4">
+                    <button style="width:100%;" id="saveBtn" onclick="saveSetings()" name="save-btn" type="button" class="btn btn-success pull-right">Save</button>
+                    <!-- <button id="saveToFavorites" name="save-btn" type="button" class="btn btn-primary">Save to favorites</button> -->
+                  </div>
+              </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid footer">
+    <div class="row">
+      <div class="col-xs-3 text-center"><a href="index.html"><i class="glyphicon glyphicon-search"></i></br>Explore</a></div>
+      <div class="col-xs-3 text-center"><a href="favorites.html"><i class="glyphicon glyphicon-heart"></i></br>Favorites</a></div>
+      <div class="col-xs-3 text-center"><a href="add.html"><i class="glyphicon glyphicon-plus"></i></br>Add</a></div>
+      <div class="col-xs-3 text-center"><a href="about.html"><i class="glyphicon glyphicon-question-sign"></i></br>About</a></div>
+    </div>
+  </div>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/setings.js"></script>
+    </body>
+</html>

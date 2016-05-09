@@ -1,5 +1,15 @@
 $(document).ready(function(){
-  var urlDomain = "192.168.0.101";
+  var urlDomain = "localHost";
+
+  if(typeof(Storage) !== "undefined") {//ako browser ne podrzava localStorage
+  urlDomain = localStorage.getItem("urlDomain");
+    if(!urlDomain){//ako browser podrzava localStorage ali se aplikacija pokrece prvi put
+      urlDomain = "localHost";
+    }
+  }else{
+    // Sorry! No Web Storage support..
+    console.log("Sorry your browser doesen't support Local Storage!");
+  }
 
   $('a[href$="add.html"]').css("color","#9AFF9C");
 
@@ -44,15 +54,14 @@ $(document).ready(function(){
          $("#working_time-from").val().toString() +"-"+ $("#working_time-until").val().toString()+"h",
          $("#email").val()
        );
-       delete newLocation._id;
-       console.log(newLocation);
-
+       delete newLocation._id;//server ocekuje lokaciju bez _id
+       //console.log(newLocation);
+       $("#saveBtn").attr("disabled", true);
        $.ajax({
          type: "POST",
          url: "http://"+urlDomain+":3000/api/insertLocation",
          data: newLocation,
          success: function(data){
-           $("#saveBtn").attr("disabled", true);
            $("#saveBtn").html("New location inserted");
          }
        });

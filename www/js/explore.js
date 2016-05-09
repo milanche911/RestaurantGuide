@@ -1,7 +1,15 @@
 $(document).ready(function(){
   var locations = new listOfLocation();
+  var urlDomain = "localHost";
 
-  var urlDomain = "192.168.0.101";
+  if(typeof(Storage) !== "undefined") {//ako browser ne podrzava localStorage
+  urlDomain = localStorage.getItem("urlDomain");
+    if(!urlDomain){//ako browser podrzava localStorage ali se aplikacija pokrece prvi put
+      urlDomain = "localHost";
+    }
+  }else{
+    console.log("Sorry your browser doesen't support Local Storage!");
+  }
 
   $("#locationForm").submit(function(e){ //prevent default behaviour for Form
       e.preventDefault();
