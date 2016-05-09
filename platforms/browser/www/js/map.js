@@ -165,7 +165,7 @@
   }
 
   function prepareAndShowLocations(listOfLocation){
-      deleteMarkers();
+      //deleteMarkers();
       for(var i=0;i<listOfLocation.getLength();i++){
         addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).lat, listOfLocation.getLocation(i).lng),listOfLocation.getLocation(i),i);
       }

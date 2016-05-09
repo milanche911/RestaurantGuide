@@ -1,4 +1,3 @@
-alert("Locations load");
 function location(id,lat,lng,name,type,tel,working_time,email){ //class marker
     this._id = id;
     this.lat = lat;

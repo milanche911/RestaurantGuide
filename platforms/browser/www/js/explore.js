@@ -1,11 +1,9 @@
 $(document).ready(function(){
-  alert("Code line 2");
   $('a[href$="index.html"]').css("color","#9AFF9C");
 
   var locations = new listOfLocation();
   var urlDomain = "localHost";
 
-  alert("Code line 8");
   if(typeof(Storage) !== "undefined") {//ako browser ne podrzava localStorage
   urlDomain = localStorage.getItem("urlDomain");
     if(!urlDomain){//ako browser podrzava localStorage ali se aplikacija pokrece prvi put
