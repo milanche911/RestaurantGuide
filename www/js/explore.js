@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $('a[href$="index.html"]').css("color","#9AFF9C");
+
   var locations = new listOfLocation();
   var urlDomain = "localHost";
 
@@ -8,16 +10,15 @@ $(document).ready(function(){
       urlDomain = "localHost";
     }
   }else{
+    alert("Sorry your browser doesen't support Local Storage!");
     console.log("Sorry your browser doesen't support Local Storage!");
   }
 
   $("#locationForm").submit(function(e){ //prevent default behaviour for Form
       e.preventDefault();
     });
-  $('a[href$="index.html"]').css("color","#9AFF9C");
 
       getMap(43.319366, 21.898338,false);//default location Nis
-
       $("#currentLocation").click(function CurrentPosition(){
         getMapLocation();
       });
@@ -145,5 +146,4 @@ $(document).ready(function(){
       }
       return types;
     };
-
 });

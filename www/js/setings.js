@@ -35,6 +35,11 @@ document.addEventListener('deviceready', function () {
   }
   function setAllSetings(){
     if(typeof(Storage) !== "undefined") {
+      
+      var subscribe = localStorage.getItem("subscribe");
+      if(subscribe==null){
+        localStorage.setItem("subscribe",true);
+      }
 
       var subscribe = localStorage.getItem("subscribe");
       var urlDomain = localStorage.getItem("urlDomain");

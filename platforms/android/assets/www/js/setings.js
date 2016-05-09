@@ -1,6 +1,6 @@
 document.addEventListener('deviceready', function () {
 
-  $('a[href$="setings.html"]').css("color","#9AFF9C");
+  $('a[href$="about.html"]').css("color","#9AFF9C");
 
   saveSetings = function(){
 
@@ -35,6 +35,11 @@ document.addEventListener('deviceready', function () {
   }
   function setAllSetings(){
     if(typeof(Storage) !== "undefined") {
+      
+      var subscribe = localStorage.getItem("subscribe");
+      if(subscribe==null){
+        localStorage.setItem("subscribe",true);
+      }
 
       var subscribe = localStorage.getItem("subscribe");
       var urlDomain = localStorage.getItem("urlDomain");

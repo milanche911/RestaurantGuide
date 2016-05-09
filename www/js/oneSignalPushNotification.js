@@ -14,4 +14,5 @@ document.addEventListener('deviceready', function () {
   // Show an alert box if a notification comes in when the user is in your app.
   window.plugins.OneSignal.enableInAppAlertNotification(true);
 
+
 }, false);

@@ -1,5 +1,5 @@
 document.addEventListener('deviceready', function () {
-        console.log(navigator.camera);
+        //console.log(navigator.camera);
 
     takePhoto = function() {
 
