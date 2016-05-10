@@ -1,0 +1,16 @@
+svg{
+  width: 158px;
+  height: 200px;
+  text-align: center;
+}
+.container h1,h2{
+
+  text-align: center;
+}
+.container p{
+  text-align: center;
+  font-size: 16px;
+}
+.container .center{
+  text-align: center;
+}

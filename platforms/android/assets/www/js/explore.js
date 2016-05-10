@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('a[href$="index.html"]').css("color","#9AFF9C");
+  $('a[href$="explore.html"]').css("color","#9AFF9C");
 
   var locations = new listOfLocation();
   var urlDomain = "localHost";

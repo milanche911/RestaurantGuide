@@ -1,0 +1,43 @@
+#infoLabel{
+  text-align: center;
+  display: block;
+  color: red;
+}
+/* --google remove footer and logo image-- */
+.gm-style-cc{
+ display: none;
+}
+img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"]{
+  display: none;
+}
+
+.about{
+  background-color: rgba(228, 222, 222,0.7);
+}
+/* --currentLocation button -- */
+.currentLocation{
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+  border-radius: 2px;
+  line-height: 40px;
+  text-align: center;
+}
+/*Marker info window*/
+.info-label {
+  font-weight: bold;
+}
+
+#info-window > div {
+  margin-bottom: 5px;
+}
+
+#info-window > button {
+  display: block;
+  margin: 0 auto;
+}
