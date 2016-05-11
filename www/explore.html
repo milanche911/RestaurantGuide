@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/explore.css">
     <link rel="stylesheet" type="text/css" href="css/search.css">
     <title>Explore</title>
+
 </head>
 
 <body>
@@ -69,7 +70,8 @@
                 <div class="container-fluid">
                   <div class="row">
                     <div class="col-xs-12">
-                      <img id="photo" class="img-responsive" src="http://lorempixel.com/g/400/200/" alt="" />
+                      <p id="pictureStatus" style="color:red"></p>
+                      <img id="photo" class="img-responsive" src="" alt="" />
                     </div>
                   </div>
                 </div>
@@ -89,6 +91,8 @@
 
   <div id="map"></div>
   <div id="currentLocation" class="currentLocation"><i class="glyphicon glyphicon-map-marker color-blue"></i></div>
+  <div id="status" class="status">Connecting...</div>
+  <div data-toggle="modal" data-target="#takePhotoModal" class="gallery"><i class="glyphicon glyphicon glyphicon-camera color-orange"></i></div>
 
   <div class="search">
     <div class="container-fluid">
@@ -146,6 +150,11 @@
   <script type="text/javascript" src="js/camera.js"></script>
   <script type="text/javascript" src="js/explore.js"></script>
   <!-- <script type="text/javascript" src="js/dummyDataTest.js"></script> -->
+
+  <!-- Skripta za sokete sa Servera -->
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <!-- Moja skripta za sokete -->
+  <script src="js/socket.io.js"></script>
 </body>
 
 </html>

@@ -13,14 +13,14 @@ $(document).ready(function(){
     alert("Sorry your browser doesen't support Local Storage!");
     console.log("Sorry your browser doesen't support Local Storage!");
   }
-
+  $('#photo').attr('src', "http://"+urlDomain+":3000/images/temp.jpeg");
   $("#locationForm").submit(function(e){ //prevent default behaviour for Form
       e.preventDefault();
     });
 
       getMap(43.319366, 21.898338,false);//default location Nis
       $("#currentLocation").click(function CurrentPosition(){
-        getMapLocation();
+        getMapLocation(onMapSuccess);//onMapSuccess is callback function
       });
 
       $.ajax({

@@ -4,12 +4,16 @@
   var markerCurrentLocation;
   var latitude;
   var longitude;
-  function getMapLocation() {
+
+  //Options
+  var options = { enableHighAccuracy: true };
+  //get current location
+  function getMapLocation(callback) {
       // getMap(43.319366, 21.898338,false);//default location Nis
       if(map === undefined)//ako mapa nije inicijalizovana a vec je kliknuto dugme za odredjivanje lokacije
         return;
       if(navigator)
-          navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, options);
+          navigator.geolocation.getCurrentPosition(callback, onMapError, options);
         else{
           console.log("Browser doesen't support geolocation!");
         }
@@ -26,9 +30,6 @@
       map.setZoom(19);
       addMarkerForCurrentLocation(latLng);
   };
-
-  //Options
-  var options = { enableHighAccuracy: true };
 
   // Get map by using coordinates
   function getMap(latitude, longitude) {
@@ -55,40 +56,10 @@
       };
       map = new google.maps.Map(document.getElementById("map"), mapOptions);
   }
-
-  // Success callback for watching your changing position
-  var onMapWatchSuccess = function (position) {
-
-      var updatedLatitude = position.coords.latitude;
-      var updatedLongitude = position.coords.longitude;
-
-      if (updatedLatitude != latitude && updatedLongitude != longitude) {
-
-          latitude = updatedLatitude;
-          longitude = updatedLongitude;
-
-          addMarkerForCurrentLocation(new google.maps.LatLng(latitude, longitude));
-      }
-  };
-
   // Error callback
   function onMapError(error) {
       console.log('code: ' + error.code + '\n' +
           'message: ' + error.message + '\n');
-  }
-
-  // Watch your changing position
-  function watchMapPosition() {
-      return navigator.geolocation.watchPosition(onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
-  }
-
-  //add marker on map on click
-  function addMarkerOnClick(){
-    google.maps.event.addListener(map, 'click', function(event) {
-      var location = new Location();
-      location.type = "Restaurant";
-       addMarker(event.latLng,location);
-    });
   }
   // add marker on map
   function addMarker(latLng,location,index) {//ako treba da se prikaze samo jedan marker onda se brisu svi markeri
@@ -114,8 +85,7 @@
                         '<div><span class="info-label">email: </span><span>' + location.email + '</span></div>'+
                         '<div><span class="info-label">Working time: </span><span>' + location.working_time + '</span></div>'+
                         '<div class="btns"><button type="button" onclick="addToFavorites(' + index + ');" class="btn btn-primary btn-xs">Favorite <i class="glyphicon glyphicon-heart"></i></button>'+
-                        '<button type="button" onclick="setIndexInModal(' + index + ');" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Delete <i class="glyphicon glyphicon-trash"></i></button>'+
-                        '<button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#takePhotoModal">Gallery <i class="glyphicon glyphicon-camera"></i></button></div></div>';
+                        '<button type="button" onclick="setIndexInModal(' + index + ');" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Delete <i class="glyphicon glyphicon-trash"></i></button></div></div>';
 
     var infoWindow = new google.maps.InfoWindow({
       content: contentString
@@ -163,14 +133,47 @@
     clearMarkers();
     markers = [];
   }
-
+  //show locations from server on map
   function prepareAndShowLocations(listOfLocation){
       deleteMarkers();
       for(var i=0;i<listOfLocation.getLength();i++){
         addMarker(new google.maps.LatLng(listOfLocation.getLocation(i).lat, listOfLocation.getLocation(i).lng),listOfLocation.getLocation(i),i);
       }
   }
+  //set center on map
   function setCenterOnMap(lat,lng){
     map.setCenter(new google.maps.LatLng(lat,lng));
     map.setZoom(19);
   }
+
+
+
+//Stvari koje se ne koriste ali sluze kao podsetnik
+  // // Watch your changing position
+  // function watchMapPosition() {
+  //     return navigator.geolocation.watchPosition(onMapWatchSuccess, onMapError, { enableHighAccuracy: true });
+  // }
+  // Success callback for watching your changing position
+  // var onMapWatchSuccess = function (position) {
+  //
+  //     var updatedLatitude = position.coords.latitude;
+  //     var updatedLongitude = position.coords.longitude;
+  //
+  //     if (updatedLatitude != latitude && updatedLongitude != longitude) {
+  //
+  //         latitude = updatedLatitude;
+  //         longitude = updatedLongitude;
+  //
+  //         addMarkerForCurrentLocation(new google.maps.LatLng(latitude, longitude));
+  //     }
+  // };
+
+  //Funkcija namenjena za add formu ali nije zazivela
+  // //add marker on map on click
+  // function addMarkerOnClick(){
+  //   google.maps.event.addListener(map, 'click', function(event) {
+  //     var location = new Location();
+  //     location.type = "Restaurant";
+  //      addMarker(event.latLng,location);
+  //   });
+  // }

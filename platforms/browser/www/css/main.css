@@ -11,6 +11,9 @@ html,body {
 .color-blue{
   color:rgba(22, 73, 255, 0.99);
 }
+.color-orange{
+  color:rgb(255, 120, 0);
+}
 /*-- Footer - navbar --*/
 .footer {
   position: fixed;
@@ -46,4 +49,18 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"]{
 
 .btns button {
   margin: 0 10px;
+}
+
+.status{
+  position: fixed;
+  bottom: 60px;
+  left: 10px;
+  font-size: 18px;
+  width: 120px;
+  height: 20px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+  border-radius: 2px;
+  text-align: center;
+  color: rgb(0, 173, 23);
 }

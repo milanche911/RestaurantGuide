@@ -12,7 +12,7 @@ document.addEventListener('deviceready', function () {
                 sourceType: Camera.PictureSourceType.CAMERA,
                 encodingType: Camera.EncodingType.JPEG,
                 mediaType: Camera.MediaType.PICTURE,
-                allowEdit: true,
+                allowEdit: false,
                 correctOrientation: true //Corrects Android orientation quirks
             };
             return options;
@@ -61,10 +61,13 @@ document.addEventListener('deviceready', function () {
             }, options);
         }
 
-        function displayImage(imgUri) {
+        function displayImage(imageURI) {
 
-            var elem = document.getElementById('photo');
-            elem.src = imgUri;
+            console.log("IMAGEURL12345" + imageURI);
+            //call socket io and then emit picrure to the server, after server store picrure show picture
+            sendPictureToServer(imageURI);
+            // var elem = document.getElementById('photo');
+            // elem.src = "data:image/jpeg;base64," + imageData;//image data is picture in base64;
         }
 
         openCamera();

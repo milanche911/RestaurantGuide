@@ -28,6 +28,19 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4.png"]{
   line-height: 40px;
   text-align: center;
 }
+.gallery{
+  position: fixed;
+  bottom: 140px;
+  right: 10px;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+  border-radius: 2px;
+  line-height: 40px;
+  text-align: center;
+}
 /*Marker info window*/
 .info-label {
   font-weight: bold;
